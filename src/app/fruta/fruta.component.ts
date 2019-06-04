@@ -8,4 +8,6 @@ import { Component } from '@angular/core';
 export class FrutaComponent{
     public nombre_componente = 'Componente de fruta';
     public listado_frutas = 'Naranja, Manzana, Pera y Sandía';
+
+    public nombre:string = 4;
 }
