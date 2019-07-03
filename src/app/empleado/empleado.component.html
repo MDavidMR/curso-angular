@@ -5,13 +5,22 @@
 <hr>
 
 <h3>Selector de colores</h3>
-<input type="text" />
+<button (click)="logColorSeleccionado()">Mostrar Log</button>
+<input type="text" [(ngModel)]="colorSeleccionado" />
+<pre [style.border]="colorSeleccionado=='red' ? '5px solid black' : '1px solid orange'"
+    [ngClass]="{
+        fondoAzul: colorSeleccionado == 'blue',
+        fondoVerde: colorSeleccionado == 'green'
+    }">
+    <strong>Color elegido:</strong>
+    {{colorSeleccionado}}
+</pre>
 <div [ngStyle]="{
-    background:color, 
+    background:colorSeleccionado, 
     width: '200px', 
     height:'200px', 
     float: 'right',
-    'margin-right': '10%'}">   
+    'margin-right': '10%'}">
 </div>
 <div style="clear:both"></div>
 
@@ -61,7 +70,7 @@
 <h3>Listado de empleados</h3>
 <ul>
     <li *ngFor="let empleado of trabajadores; let i = index">
-       <strong>Empleado: {{i + 1}}</strong>
+        <strong>Empleado: {{i + 1}}</strong>
         <ul>
             <li>{{empleado.nombre}}</li>
             <li>{{empleado.edad}}</li>
@@ -71,4 +80,3 @@
         </ul>
     </li>
 </ul>
-
