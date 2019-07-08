@@ -1,1 +1,11 @@
 <h3>{{titulo}}</h3>
+
+<br>
+<input type="text" [(ngModel)]="prendaNueva"><button (click)="agregarPrenda()">Añadir prenda</button>
+<h3>Listado de prendas de ropa</h3>
+<ul>
+    <li *ngFor="let prenda of listado_ropa; let i = index">
+        {{i}} - {{prenda}}
+        <button (click)="eliminarPrenda(i)">Eliminar</button>
+    </li>
+</ul>
