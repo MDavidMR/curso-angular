@@ -11,10 +11,13 @@ export class HomeComponent {
     public titulo = 'Página principal';
     public listado_ropa: Array<string>;
     public prendaNueva: string;
+    public fecha:Date;
 
     constructor(
         private _ropaService: RopaService
-    ) { }
+    ) {
+        this.fecha = new Date();
+     }
 
     ngOnInit() {
         this.listado_ropa = this._ropaService.getRopa();
@@ -23,7 +26,6 @@ export class HomeComponent {
 
     agregarPrenda() {
         this._ropaService.addRopa(this.prendaNueva);
-        // this.listado_ropa.push(this.prendaNueva);
         this.prendaNueva = "";
     }
 

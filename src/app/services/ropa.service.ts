@@ -11,7 +11,7 @@ export class RopaService {
         return nombrePrenda;
     }
 
-    addRopa(nombrePrenda) {
+    addRopa(nombrePrenda): Array<string> {
         this.coleccionRopa.push(nombrePrenda);
         return this.getRopa();
     }

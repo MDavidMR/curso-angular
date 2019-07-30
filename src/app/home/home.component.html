@@ -1,7 +1,16 @@
-<h3>{{titulo}}</h3>
+<h3>{{titulo | uppercase}}</h3>
 
 <br>
+{{fecha| date:'dd/MM/yyyy'}}
+{{fecha| date:'fullDate' | uppercase | lowercase}}
+
+<br />
+
+{{5 | conversor: 7}}
+<br>
+
 <input type="text" [(ngModel)]="prendaNueva"><button (click)="agregarPrenda()">Añadir prenda</button>
+<p *ngIf="prendaNueva != ''">La prenda a guardar es: <strong>{{prendaNueva}}</strong></p>
 <h3>Listado de prendas de ropa</h3>
 <ul>
     <li *ngFor="let prenda of listado_ropa; let i = index">
